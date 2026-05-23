@@ -1,6 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Add this helper function so Next.js knows what pages to statically render
+export async function generateStaticParams() {
+  return [
+    { slug: 'furniture' },
+    { slug: 'electronics' },
+    { slug: 'appliances' },
+    { slug: 'decor' }
+  ];
+}
+
 // Basic Logic for Subcategories
 const categoryData: Record<string, { title: string, subcategories: string[] }> = {
   furniture: {
